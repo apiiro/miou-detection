@@ -1,0 +1,32 @@
+title: Python Spawning A Python Child That Executes Code Read From Stdin (MIOU In-Memory PE Loader)
+id: 18c6495d-19a9-47d9-85de-9402f093bc18
+status: experimental
+description: Detects the MIOU repo loader starting a hidden child interpreter (CREATE_NO_WINDOW) with an inline -c program that reads the decrypted payload from stdin and maps it in memory. The child later runs the crypter, the Beretta stealer and launches rundll32.
+references:
+    - https://github.com/naksyn/PythonMemoryModule
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.execution
+    - attack.t1059.006
+    - attack.defense-evasion
+    - attack.t1620
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '\python.exe'
+            - '\pythonw.exe'
+    selection_child:
+        Image|endswith:
+            - '\python.exe'
+            - '\pythonw.exe'
+        CommandLine|contains|all:
+            - ' -c '
+            - 'sys.stdin.buffer.read()'
+    condition: selection_parent and selection_child
+falsepositives:
+    - Build or test harnesses that pipe code to a child interpreter (rare with stdin.buffer and an inline import)
+level: high

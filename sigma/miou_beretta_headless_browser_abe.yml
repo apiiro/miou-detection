@@ -1,0 +1,32 @@
+title: Off-Screen Headless Chromium Started By A Non-Browser Process (Beretta App-Bound Encryption Bypass)
+id: 9e479da7-f56f-4c93-b8c8-2115fa55882f
+status: experimental
+description: Detects Beretta's app-bound encryption bypass, which starts Chrome, Edge or Brave headless with a temporary profile, a 1x1 window at -32000,-32000 and --no-sandbox, then talks to the browser's elevation service over IElevator.
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.credential-access
+    - attack.t1555.003
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_browser:
+        Image|endswith:
+            - '\chrome.exe'
+            - '\msedge.exe'
+            - '\brave.exe'
+    selection_flags:
+        CommandLine|contains|all:
+            - '--headless'
+            - '--window-position=-32000,-32000'
+            - '--user-data-dir='
+    filter_parent_browser:
+        ParentImage|endswith:
+            - '\chrome.exe'
+            - '\msedge.exe'
+            - '\brave.exe'
+    condition: selection_browser and selection_flags and not filter_parent_browser
+falsepositives:
+    - Automation frameworks that hide windows off-screen (Puppeteer and Selenium usually do not use -32000)
+level: high

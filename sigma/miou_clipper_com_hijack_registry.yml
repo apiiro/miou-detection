@@ -1,0 +1,33 @@
+title: HKCU COM InprocServer32 Pointing To A DLL Under AppData (MIOU msedgeview Clipper)
+id: 893a7f36-cfe8-40b5-ab77-f166044d2e29
+status: experimental
+description: Detects a per-user COM class registration whose InprocServer32 points to a DLL in the user's AppData, as written by the MIOU loader and re-asserted by the msedgeview.dll clipper itself. The CLSID changes per build.
+references:
+    - https://attack.mitre.org/techniques/T1546/015/
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.persistence
+    - attack.privilege-escalation
+    - attack.t1546.015
+logsource:
+    category: registry_set
+    product: windows
+detection:
+    selection_key:
+        TargetObject|contains: '\Software\Classes\CLSID\'
+        TargetObject|endswith: '\InprocServer32\(Default)'
+    selection_value:
+        Details|contains: '\AppData\Local\'
+        Details|endswith: '.dll'
+    selection_known:
+        Details|contains: '\Microsoft\EdgeWebView\msedgeview.dll'
+    filter_main_installers:
+        Image|contains:
+            - '\Microsoft\OneDrive\'
+            - '\Microsoft\Teams\'
+            - '\AppData\Local\Programs\'
+    condition: (selection_key and selection_value and not filter_main_installers) or selection_known
+falsepositives:
+    - Per-user installs of shell extensions (OneDrive, Teams, Dropbox) that register COM servers under AppData
+level: medium

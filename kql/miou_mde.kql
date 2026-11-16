@@ -1,0 +1,44 @@
+// MIOU / Beretta hunting queries for Microsoft Defender XDR (Advanced Hunting). Apiiro Research, 2026-11-17.
+
+// 1. Hidden child python that executes code read from stdin (repo loader -> in-memory PE)
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ ("python.exe", "pythonw.exe")
+| where FileName in~ ("python.exe", "pythonw.exe")
+| where ProcessCommandLine has " -c " and ProcessCommandLine has "sys.stdin.buffer.read()"
+| project Timestamp, DeviceName, AccountName, InitiatingProcessCommandLine, ProcessCommandLine, ProcessId
+
+// 2. rundll32 calling an ordinal in a DLL under AppData (clipper launch: msedgeview.dll,#3)
+DeviceProcessEvents
+| where FileName =~ "rundll32.exe"
+| where ProcessCommandLine matches regex @"(?i)\\AppData\\[^""]+\.dll""?\s*,\s*#\d+"
+| project Timestamp, DeviceName, AccountName, InitiatingProcessFileName, InitiatingProcessCommandLine, ProcessCommandLine
+
+// 3. Per-user COM server registered to a DLL under AppData\Local (clipper COM hijack; CLSID varies per build)
+DeviceRegistryEvents
+| where ActionType == "RegistryValueSet"
+| where RegistryKey has @"\Software\Classes\CLSID\" and RegistryKey endswith @"\InprocServer32"
+| where RegistryValueName in ("", "(Default)")
+| where RegistryValueData has @"\AppData\Local\" and RegistryValueData endswith ".dll"
+| where not(InitiatingProcessFolderPath has_any (@"\Microsoft\OneDrive\", @"\Microsoft\Teams\", @"\AppData\Local\Programs\"))
+| project Timestamp, DeviceName, RegistryKey, RegistryValueData, InitiatingProcessFileName, InitiatingProcessCommandLine
+
+// 4. Beretta ABE bypass: off-screen headless browser with a temp profile, started by a non-browser
+DeviceProcessEvents
+| where FileName in~ ("chrome.exe", "msedge.exe", "brave.exe")
+| where ProcessCommandLine has "--headless" and ProcessCommandLine has "--window-position=-32000,-32000"
+| where InitiatingProcessFileName !in~ ("chrome.exe", "msedge.exe", "brave.exe")
+| project Timestamp, DeviceName, InitiatingProcessFileName, InitiatingProcessCommandLine, ProcessCommandLine
+
+// 5. Chain correlation: python.exe that both opens a TLS session to a bare IP on a non-standard port
+//    and starts rundll32 or a headless browser within 10 minutes
+let py = DeviceNetworkEvents
+| where InitiatingProcessFileName in~ ("python.exe", "pythonw.exe")
+| where RemoteIPType == "Public" and isempty(RemoteUrl) and RemotePort !in (80, 443)
+| project DeviceId, PyPid = InitiatingProcessId, NetTime = Timestamp, RemoteIP, RemotePort;
+DeviceProcessEvents
+| where InitiatingProcessFileName in~ ("python.exe", "pythonw.exe")
+| where FileName in~ ("rundll32.exe", "chrome.exe", "msedge.exe", "brave.exe")
+| project DeviceId, DeviceName, PyPid = InitiatingProcessId, ChildTime = Timestamp, FileName, ProcessCommandLine
+| join kind=inner py on DeviceId, PyPid
+| where abs(datetime_diff("minute", ChildTime, NetTime)) <= 10
+| project DeviceName, ChildTime, FileName, ProcessCommandLine, RemoteIP, RemotePort

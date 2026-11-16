@@ -1,0 +1,27 @@
+title: Rundll32 Calling An Unnamed Ordinal In A DLL Under AppData (MIOU Clipper Launch)
+id: b2d31f03-ae6f-4760-8003-9db4d8e77be6
+status: experimental
+description: Detects rundll32 launching a DLL from the user's AppData by ordinal, as the MIOU loader does with "rundll32.exe <LocalAppData>\Microsoft\EdgeWebView\msedgeview.dll,#3" (hidden window, parent is the hidden child python.exe).
+references:
+    - https://attack.mitre.org/techniques/T1218/011/
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.defense-evasion
+    - attack.t1218.011
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_img:
+        - Image|endswith: '\rundll32.exe'
+        - OriginalFileName: 'RUNDLL32.EXE'
+    selection_ordinal:
+        CommandLine|re: '\.dll"?\s*,\s*#\d+'
+        CommandLine|contains: '\AppData\'
+    selection_known:
+        CommandLine|contains: '\EdgeWebView\msedgeview.dll'
+    condition: selection_img and (selection_ordinal or selection_known)
+falsepositives:
+    - Rare per-user software that exposes functionality only by ordinal
+level: high
