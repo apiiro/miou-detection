@@ -9,12 +9,14 @@ Detection content for MIOU, a malware operation that ships trojanized Python MCP
 | `yara/failproxy_python_loader.yar` | 4 rules for the Python loader in the repos (hidden stdin stager, ctypes PE mapper, Cloudflare/curl fallback transport, kit material) |
 | `yara/miou_beretta.yar` | 6 rules for binaries: stage 3 crypter, stage 4 loader, Beretta image and in-memory image, clipper DLL, app-bound-encryption helper DLL |
 | `sigma/` | 6 Sigma rules: hidden Python child fed over stdin, rundll32 ordinal #3 from AppData, clipper file drop, COM hijack registry write, browser started with a `%TEMP%\v20_*` profile, `CrHlp_*` named pipe (app-bound encryption bypass) |
+| `semgrep/mcp_hidden_loader.semgrep.yml` | 4 Semgrep rules for Python MCP server repos, aimed at the technique (decorator-started background job, hidden interpreter fed over stdin, ctypes PE mapper, pinned IP with TLS verification off) rather than this kit's literals |
 | `kql/miou_mde.kql` | Microsoft Defender for Endpoint hunting queries |
 | `tests/` | Test results: recall on known family samples and false positives on benign corpora |
 
 ## Test results
 
 - Python loader YARA: 36/36 known family repos, 0 false positives on 96,893 benign Python files.
+- Semgrep: 3 rules hit 36/36 family repos, the TLS rule 29/36 (the other 7 have no such transport); 0 false positives on 96,893 benign Python files.
 - Binary YARA: all known stages hit, 0 false positives on 1,478 benign Windows PEs.
 - YARA Forge (11,852 community rules): no hits on stage 3, stage 4, the clipper or the Beretta image.
 
@@ -22,6 +24,7 @@ Detection content for MIOU, a malware operation that ships trojanized Python MCP
 
 ```
 yara -r yara/ <path-to-cloned-repo-or-sample>
+semgrep --config semgrep/ <path-to-cloned-mcp-server>
 ```
 
 Author: Shmulik Cohen (Apiiro).

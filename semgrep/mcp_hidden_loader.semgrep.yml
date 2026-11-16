@@ -1,0 +1,195 @@
+rules:
+  # 1. A background job (daemon thread, or detached/hidden child interpreter)
+  #    fired either by a pass-through decorator on the entry point or by a bare
+  #    call at import time. The job itself lives in the same module.
+  - id: mcp-hidden-loader-decorator-background-job
+    languages: [python]
+    severity: WARNING
+    message: >-
+      '$KICK' runs on first call of the decorated entry point (or at import
+      time) in a module that starts a daemon thread or a hidden/detached child
+      interpreter. Loaders hide a C2 pull behind this so the tool works
+      normally while the payload downloads in the background.
+    metadata:
+      category: security
+      subcategory: [audit]
+      confidence: MEDIUM
+      likelihood: MEDIUM
+      impact: HIGH
+      cwe: "CWE-506: Embedded Malicious Code"
+      references:
+        - https://attack.mitre.org/techniques/T1195/001/
+        - https://attack.mitre.org/techniques/T1059/006/
+    patterns:
+      # module starts a background job: daemon thread, or Popen of the
+      # interpreter with creationflags / a new session
+      - pattern-regex: (?s)\A(?=.*threading\.Thread\([^)]*daemon\s*=\s*True|.*Popen\(\s*\[\s*sys\.executable[^\]]*\][^)]*(creationflags|start_new_session)).*\z
+      - pattern-either:
+          # decorator: wrapper runs a side call, then delegates to the wrapped fn
+          - patterns:
+              - pattern-inside: |
+                  def $DEC($FN):
+                    ...
+                    def $W(...):
+                      ...
+                    ...
+                    return $W
+              - pattern-inside: |
+                  def $W(...):
+                    ...
+                    return $FN(...)
+              - pattern: $KICK()
+              - metavariable-regex:
+                  metavariable: $KICK
+                  regex: ^[A-Za-z_][A-Za-z0-9_]*$
+          # import time: bare module-level call to a function in this module
+          # that itself starts the daemon thread / hidden child
+          - patterns:
+              - pattern-either:
+                  - pattern-inside: |
+                      def $KICK(...):
+                        ...
+                        threading.Thread(..., daemon=True, ...).start()
+                        ...
+                      ...
+                  - pattern-inside: |
+                      def $KICK(...):
+                        ...
+                        subprocess.Popen([sys.executable, ...], ...)
+                        ...
+                      ...
+              - pattern: $KICK()
+              - pattern-not-inside: |
+                  def $ANY(...):
+                    ...
+              - pattern-not-inside: |
+                  class $C:
+                    ...
+              - pattern-not-inside: |
+                  if __name__ == "__main__":
+                    ...
+              - pattern-not-inside: |
+                  try:
+                    ...
+                  except ImportError:
+                    ...
+
+  # 2. Bytes piped into a hidden child copy of the current interpreter.
+  - id: mcp-hidden-loader-hidden-interpreter-stdin
+    languages: [python]
+    severity: ERROR
+    message: >-
+      Spawns a Python interpreter with no console window and feeds it a payload
+      over stdin, or runs -c code that reads sys.stdin.buffer. This keeps the
+      payload off disk and out of argv; a common in-memory loader stage.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      confidence: HIGH
+      likelihood: HIGH
+      impact: HIGH
+      cwe: "CWE-506: Embedded Malicious Code"
+      references:
+        - https://attack.mitre.org/techniques/T1059/006/
+        - https://attack.mitre.org/techniques/T1564/003/
+        - https://learn.microsoft.com/en-us/windows/win32/procthread/process-creation-flags
+    pattern-either:
+      # fire-and-forget -c code that reads raw bytes from stdin (inline or via
+      # a cmd variable), started hidden/detached or with output discarded
+      - patterns:
+          - pattern-either:
+              - pattern: subprocess.$CALL([$EXE, "-c", $CODE, ...], ...)
+              - pattern: |
+                  $CMD = [$EXE, "-c", $CODE, ...]
+                  ...
+                  subprocess.$CALL($CMD, ...)
+          - metavariable-regex:
+              metavariable: $CODE
+              regex: (?s).*stdin\.buffer\.read\(
+          - pattern-either:
+              - patterns:
+                  - pattern: subprocess.$CALL(..., creationflags=$CF, ...)
+                  - metavariable-regex:
+                      metavariable: $CF
+                      regex: (?i).*(0x0*8000000|134217728|CREATE_NO_WINDOW|DETACHED_PROCESS|0x0*8\b)
+              - pattern: subprocess.$CALL(..., stdout=subprocess.DEVNULL, ..., stderr=subprocess.DEVNULL, ...)
+              - pattern: subprocess.$CALL(..., stderr=subprocess.DEVNULL, ..., stdout=subprocess.DEVNULL, ...)
+      # hidden interpreter child with stdin=PIPE
+      - patterns:
+          - pattern-either:
+              - pattern: subprocess.$CALL([$EXE, ...], ..., stdin=subprocess.PIPE, ..., creationflags=$CF, ...)
+              - pattern: |
+                  $CMD = [$EXE, ...]
+                  ...
+                  subprocess.$CALL($CMD, ..., stdin=subprocess.PIPE, ..., creationflags=$CF, ...)
+          - metavariable-regex:
+              metavariable: $EXE
+              regex: ^(sys\.executable|.*python(w)?(\.exe)?["']?)$
+          - metavariable-regex:
+              metavariable: $CF
+              regex: (?i).*(0x0*8000000|134217728|CREATE_NO_WINDOW|DETACHED_PROCESS|0x0*8\b)
+
+  # 3. Manual PE mapping through ctypes: allocate, protect, run on a new thread.
+  - id: mcp-hidden-loader-ctypes-pe-mapper
+    languages: [python]
+    severity: ERROR
+    message: >-
+      Module allocates memory with VirtualAlloc, sets page protection with
+      VirtualProtect (or allocates RWX) and starts code with CreateThread:
+      a reflective PE / shellcode loader implemented in ctypes.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      confidence: HIGH
+      likelihood: HIGH
+      impact: HIGH
+      cwe: "CWE-506: Embedded Malicious Code"
+      references:
+        - https://attack.mitre.org/techniques/T1620/
+        - https://attack.mitre.org/techniques/T1055/
+    patterns:
+      # VirtualAlloc, plus either a later VirtualProtect or an RWX allocation
+      - pattern-regex: (?s)\A(?=.*\bVirtualAlloc\s*\()(?=.*(\bVirtualProtect\s*\(|\bVirtualAlloc\s*\([^\n]*(\b0x40\b|PAGE_EXECUTE_READWRITE))).*\z
+      - pattern: $K.CreateThread(...)
+
+  # 4. TLS verification off while pinning the connection to a fixed address,
+  #    or a curl --resolve fallback that does the same.
+  - id: mcp-hidden-loader-pinned-ip-no-tls-verify
+    languages: [python]
+    severity: ERROR
+    message: >-
+      Disables TLS certificate checks and connects a socket to a different
+      address than the hostname sent in SNI, or shells out to curl with
+      --resolve. Loaders use this to reach C2 through a hardcoded edge IP when
+      DNS is blocked or sinkholed.
+    metadata:
+      category: security
+      subcategory: [vuln]
+      confidence: MEDIUM
+      likelihood: MEDIUM
+      impact: HIGH
+      cwe: "CWE-295: Improper Certificate Validation"
+      references:
+        - https://attack.mitre.org/techniques/T1090/004/
+        - https://attack.mitre.org/techniques/T1071/001/
+        - https://curl.se/docs/manpage.html#--resolve
+    pattern-either:
+      - patterns:
+          - pattern-inside: |
+              def $F(...):
+                ...
+          - pattern-inside: |
+              $RAW = socket.create_connection(($TARGET, $PORT), ...)
+              ...
+          - pattern: $CTX.wrap_socket($RAW, ..., server_hostname=$HOST, ...)
+          - pattern-not-inside: |
+              $RAW = socket.create_connection(($HOST, $PORT), ...)
+              ...
+          - pattern-inside: |
+              def $F(...):
+                ...
+                $CTX.verify_mode = ssl.CERT_NONE
+                ...
+      - patterns:
+          - pattern: '"--resolve"'
+          - pattern-regex: (?s)\A(?=.*["']curl(\.exe)?["'])(?=.*\bsubprocess\b).*\z
