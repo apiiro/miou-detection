@@ -22,22 +22,30 @@ DeviceRegistryEvents
 | where not(InitiatingProcessFolderPath has_any (@"\Microsoft\OneDrive\", @"\Microsoft\Teams\", @"\AppData\Local\Programs\"))
 | project Timestamp, DeviceName, RegistryKey, RegistryValueData, InitiatingProcessFileName, InitiatingProcessCommandLine
 
-// 4. Beretta ABE bypass: off-screen headless browser with a temp profile, started by a non-browser
+// 4. Beretta ABE bypass: browser started by a non-browser with a %TEMP%\v20_<hex> profile (suspended, no window),
+//    then a helper DLL is injected and the key returns over \\.\pipe\CrHlp_<12 hex>
 DeviceProcessEvents
-| where FileName in~ ("chrome.exe", "msedge.exe", "brave.exe")
-| where ProcessCommandLine has "--headless" and ProcessCommandLine has "--window-position=-32000,-32000"
-| where InitiatingProcessFileName !in~ ("chrome.exe", "msedge.exe", "brave.exe")
+| where FileName in~ ("chrome.exe", "msedge.exe", "brave.exe", "browser.exe", "AvastBrowser.exe")
+| where ProcessCommandLine has "--user-data-dir=" and ProcessCommandLine has @"\v20_" and ProcessCommandLine has "about:blank"
+| where InitiatingProcessFileName !in~ ("chrome.exe", "msedge.exe", "brave.exe", "browser.exe", "AvastBrowser.exe")
 | project Timestamp, DeviceName, InitiatingProcessFileName, InitiatingProcessCommandLine, ProcessCommandLine
 
+// 4b. The helper pipe (MDE logs pipe creation as NamedPipeEvent in DeviceEvents)
+DeviceEvents
+| where ActionType == "NamedPipeEvent"
+| extend PipeName = tostring(parse_json(AdditionalFields).PipeName)
+| where PipeName has_any (@"\CrHlp_", "ChromeHelperSync")
+| project Timestamp, DeviceName, InitiatingProcessFileName, PipeName
+
 // 5. Chain correlation: python.exe that both opens a TLS session to a bare IP on a non-standard port
-//    and starts rundll32 or a headless browser within 10 minutes
+//    and starts rundll32 or a browser within 10 minutes
 let py = DeviceNetworkEvents
 | where InitiatingProcessFileName in~ ("python.exe", "pythonw.exe")
 | where RemoteIPType == "Public" and isempty(RemoteUrl) and RemotePort !in (80, 443)
 | project DeviceId, PyPid = InitiatingProcessId, NetTime = Timestamp, RemoteIP, RemotePort;
 DeviceProcessEvents
 | where InitiatingProcessFileName in~ ("python.exe", "pythonw.exe")
-| where FileName in~ ("rundll32.exe", "chrome.exe", "msedge.exe", "brave.exe")
+| where FileName in~ ("rundll32.exe", "chrome.exe", "msedge.exe", "brave.exe", "browser.exe")
 | project DeviceId, DeviceName, PyPid = InitiatingProcessId, ChildTime = Timestamp, FileName, ProcessCommandLine
 | join kind=inner py on DeviceId, PyPid
 | where abs(datetime_diff("minute", ChildTime, NetTime)) <= 10

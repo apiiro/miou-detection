@@ -1,0 +1,39 @@
+title: Chromium Browser Started By A Non-Browser With A Temp v20_ Profile (Beretta App-Bound Key Theft)
+id: 9e479da7-f56f-4c93-b8c8-2115fa55882f
+status: experimental
+description: Detects Beretta's app-bound encryption bypass when no browser is running. It starts Chrome, Edge, Brave, Yandex or Avast Browser suspended and windowless with a throwaway profile %TEMP%\v20_<hex>, injects a helper DLL that asks the browser's IElevator for the key, and reads it back over \\.\pipe\CrHlp_<12 hex>.
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.credential-access
+    - attack.t1555.003
+    - attack.defense-evasion
+    - attack.t1055
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection_browser:
+        Image|endswith:
+            - '\chrome.exe'
+            - '\msedge.exe'
+            - '\brave.exe'
+            - '\browser.exe'
+            - '\AvastBrowser.exe'
+    selection_flags:
+        CommandLine|contains|all:
+            - '--user-data-dir='
+            - '\v20_'
+            - '--no-sandbox'
+            - 'about:blank'
+    filter_parent_browser:
+        ParentImage|endswith:
+            - '\chrome.exe'
+            - '\msedge.exe'
+            - '\brave.exe'
+            - '\browser.exe'
+            - '\AvastBrowser.exe'
+    condition: selection_browser and selection_flags and not filter_parent_browser
+falsepositives:
+    - Unknown; the v20_ temp-profile name is specific to this family
+level: high

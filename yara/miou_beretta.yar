@@ -145,3 +145,22 @@ rule MSEdgeView_Clipper_DLL
       ($x2 and 4 of ($x*))
     )
 }
+
+rule Beretta_ABE_Helper_DLL
+{
+  meta:
+    description = "Beretta app-bound-encryption helper DLL, injected into the browser; asks IElevator for the key and returns it over \\\\.\\pipe\\CrHlp_<hex> (carried XOR-encrypted inside the stealer)"
+    author = "Shmulik Cohen (Apiiro)"
+    date = "2026-11-17"
+    hash = "eeff7b96019a65fa4518da67a4bc39e496d3c6f7a327081775140ac8a1ca5b97"
+  strings:
+    $w1 = "ChromeHelperSync" wide
+    $w2 = "elevation_service" wide
+    $w3 = "Local State" wide
+    $w4 = "Elevator" wide
+    $p1 = "CON1" ascii
+    $p2 = "INIT" ascii
+  condition:
+    uint16(0) == 0x5A4D and pe.is_dll() and filesize < 100KB and pe.exports("Bootstrap") and
+    3 of ($w*) and all of ($p*)
+}

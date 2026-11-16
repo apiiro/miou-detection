@@ -1,0 +1,21 @@
+title: Named Pipe CrHlp_ Created Or Connected (Beretta Browser Helper)
+id: b3b79200-1a47-46b4-9299-4e151730ed21
+status: experimental
+description: Detects the pipe Beretta uses to receive the browser's app-bound key from its injected helper DLL (\\.\pipe\CrHlp_ plus 12 hex characters, NULL DACL, stealer is the server).
+author: Shmulik Cohen (Apiiro)
+date: 2026-11-17
+tags:
+    - attack.credential-access
+    - attack.t1555.003
+logsource:
+    category: pipe_created
+    product: windows
+detection:
+    selection:
+        PipeName|startswith:
+            - '\CrHlp_'
+            - '\ChromeHelperSync'
+    condition: selection
+falsepositives:
+    - Unknown
+level: high
