@@ -1,0 +1,221 @@
+category	name	id_or_path	source	evidence
+browser_chromium	QIP Surf	QIP Surf\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Kometa	Kometa\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Amigo	Amigo\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Torch	Torch\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Epic Privacy Browser	Epic Privacy Browser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Chedot	Chedot\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser Dev	Yandex\YandexBrowser Dev\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Slimjet	Slimjet\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser	Yandex\YandexBrowser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	uCozMedia\Uran	uCozMedia\Uran\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	BraveSoftware\Brave-Browser	BraveSoftware\Brave-Browser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google\Chrome Canary	Google\Chrome Canary\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	CatalinaGroup\Citrio	CatalinaGroup\Citrio\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Vivaldi	Vivaldi\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google(x86)\Chrome Canary	Google(x86)\Chrome Canary\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	AegisLab\BlackHawk	AegisLab\BlackHawk\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Perplexity\Comet	Perplexity\Comet\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google\Chrome Dev	Google\Chrome Dev\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser Canary	Yandex\YandexBrowser Canary\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google\Chrome Unstable	Google\Chrome Unstable\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google(x86)\Chrome Dev	Google(x86)\Chrome Dev\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google\Chrome	Google\Chrome\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google\Chrome SxS	Google\Chrome SxS\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Sputnik\Sputnik	Sputnik\Sputnik\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser Beta	Yandex\YandexBrowser Beta\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Coowon\Coowon	Coowon\Coowon\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Opera Software\Opera Stable	Opera Software\Opera Stable	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google(x86)\Chrome	Google(x86)\Chrome\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Opera Software\Opera GX Stable	Opera Software\Opera GX Stable	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Chromium	Chromium\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google(x86)\Chrome SxS	Google(x86)\Chrome SxS\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser Tech	Yandex\YandexBrowser Tech\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Microsoft\Edge	Microsoft\Edge\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Google(x86)\Chrome Unstable	Google(x86)\Chrome Unstable\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Maxthon	Maxthon\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Mail.Ru\Atom	Mail.Ru\Atom\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	MapleStudio\ChromePlus	MapleStudio\ChromePlus\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	CocCoc\Browser	CocCoc\Browser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	7Star\7Star	7Star\7Star\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Yandex\YandexBrowser SxS	Yandex\YandexBrowser SxS\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	liebao	liebao\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	CryptoTab Browser	CryptoTab Browser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Iridium	Iridium\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	AVAST Software\Browser	AVAST Software\Browser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Orbitum	Orbitum\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	CentBrowser	CentBrowser\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Element	Element\User Data	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	Fenrir Inc\Sleipnir5\setting\modules\ChromiumViewer	Fenrir Inc\Sleipnir5\setting\modules\ChromiumViewer	hardcoded (observed in code)	fn 0x4110 path list; display names fn 0xb9d0
+browser_chromium	generic profile scan	every dir under %LOCALAPPDATA%, %APPDATA%, %TEMP% probed for \Preferences, \Login Data, User Data, Profiles, tdata	observed in code + procmon	fn 0xb830
+browser_gecko	Firefox	%APPDATA%\Mozilla\Firefox\Profiles (logins.json, key4.db, cert9.db, cookies.sqlite, places.sqlite, formhistory.sqlite)	hardcoded (observed in code)	fn 0x4110 / 0x9410
+browser_gecko	Waterfox	%APPDATA%\Waterfox\Profiles (logins.json, key4.db, cert9.db, cookies.sqlite, places.sqlite, formhistory.sqlite)	hardcoded (observed in code)	fn 0x4110 / 0x9410
+browser_gecko	Pale Moon	%APPDATA%\Moonchild Productions\Pale Moon\Profiles (logins.json, key4.db, cert9.db, cookies.sqlite, places.sqlite, formhistory.sqlite)	hardcoded (observed in code)	fn 0x4110 / 0x9410
+browser_gecko	Basilisk	%APPDATA%\Moonchild Productions\Basilisk\Profiles (logins.json, key4.db, cert9.db, cookies.sqlite, places.sqlite, formhistory.sqlite)	hardcoded (observed in code)	fn 0x4110 / 0x9410
+browser_data	Chromium files	Local State, Login Data, Web Data, Cookies, Network\Cookies, History, Bookmarks, Local Storage\leveldb	hardcoded (observed in code)	fn 0x9410
+browser_abe	Chrome/Edge/Brave/Yandex/Avast app-bound key	Local State app_bound_encrypted_key -> IElevator via injected helper DLL	hardcoded (observed in code)	fn 0x25540, 0x28080
+ext_wallet	MetaMask	nkbihfbeogaeaoehlefnkodbefgpgknn	hardcoded (observed in code), built-in default	fn 0x33ff0
+ext_wallet	Phantom	bfnaelmomeimhlpmgjnjophhpkkoljpa	hardcoded (observed in code), built-in default	fn 0x33ff0
+ext_wallet_or_2fa		afbcbjpbpfadlkmhmclhkeeodmamcflc	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		aflkmfhebedbjioipglgcbcmnbpgliof	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ajkifnllfhikkjbjopkhmjoieikeihjb	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		apjdnokplgcjkejimjdfjnhmjlbpgkdi	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		bfbdnbpibgndpjfhonkflpkijfapmomn	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		bfnaelmomeimhipmgjnjophhpkkoljpa	server config (observed only at runtime, procmon)	server 'extensions' list; Phantom-like ID with 'hip' (possible typo in operator config)
+ext_wallet_or_2fa		bhghoamapcdpbohphigoooaddinpkbai	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		bhhhlbepdkbapadjdnnojkbgioiodbic	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		bhmlbgebokamljgnceonbncdofmmkedg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		blbpgcogcoohhngdjafgpoagcilicpjh	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		blnieiiffboillknjnepogjhkgnoacbl	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		bobfejfdlhnabgglompioclndjejolch	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		cfoajccjibkjhbdjnpkbananbejpkkjb	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		cgeeodpfagjceefieflmdfphplkenlfk	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		dbhklojmlkgmpihhdooibnmidfpeaing	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		dlcobpjiigpikoobohmabehhmhfoodbb	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		dngmlblcodfobpdpecaadgfbeggfjfnm	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		dojmlmceifkfgkgeejemfciibjehhdcl	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		doljkehcfhidippihgakcihcmnknlphh	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		efbglgofoippbgcjepnhiblaibcnclgk	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		egjidjbpglichdcondbcbdnbeeppgdph	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		eidlicjlkaiefdbgmdepmmicpbggmhoj	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ejjladinnckdgjemekebdpeokbikhfci	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		elokfmmmjbadpgdjmgglocapdckdcpkn	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		fcglfhcjfpkgdppjbglknafgfffkelnm	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		fihkakfobkmkjojpchpfgcmhfjnmnfpi	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		fijngjgcjhjmmpcmkeiomlglpeiijkld	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		fldfpgipfncgndfolcbkdeeknbbbnhcc	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		flikjlpgnpcjdienoojmgliechmmheek	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		fnnegphlobjdpkhecapkijjdkgcjhkib	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		gabedfkgnbglfbnplfpjddgfnbibkmbb	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		gflpckpfdgcagnbdfafmibcmkadnlhpj	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ghmbeldphafepmbegfdlkpapadhbakde	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		gjffdbjndmcafeoehgdldobgjmlepcal	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		gofhklgdnbnpcdigdgkgfobhhghjmmkj	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		hbpfjlflhnmkddbjdchbbifhllgmmhnm	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		hdmbinomkkelahhkagfjkbieapgakfkg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		hmeobnfnfcmdkdcmlblgagmfpfboieaf	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		hnfanknocfeofbddgcijnmhnfnkdnaad	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		hppmchachflomkejbhofobganapojjol	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		idkppnahnmmggbmfkjhiakkbkdpnmnon	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		idnnbdplmphpflfnlkomgpfbpcgelopg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		imlcamfeniaidioeflifonfjeeppblda	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		inljaljiffkdgmlndjkdiepghpolcpki	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		jbdaocneiiinmjbjlgalhcelgbejmnid	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		jifanbgejlbcmhbbdbnfbfnlmbomjedj	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		jiidiaalihmmhddjgbnbgdfflelocpak	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		kgdijkcfiglijhaglibaidbipiejjfdp	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		kgeohlebpjgcfiidfhhdlnnkhefajmca	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		khcodhlfkpmhibicdjjblnkgimdepgnd	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		kkpllkodjeloidieedojogacfhpaihoh	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		kpfopkelmapcoipemfendmdcghnegimn	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		lbfeahdfdkibininjgejjgpdafeopflb	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		lpfcbjknijpeeillifnkikgncikgfhdo	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		mammpjaaoinfelloncbbpomjcihbkmmc	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		mhonjhhcgphdphdjcdoeodfdliikapmj	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		nbokbjkelpmlgflobbohapifnnenbjlh	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		nfinomegcaccbhchhgflladpfbajihdf	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		njgnlkhcjgmjfnfahdmfkalpjcneebpl	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		nlbmnnijcnlegkjjpcfjclmcfggfefdm	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		nphplpgoakhhjchkkhmiggakijnkhfnd	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ocefimbphcgjaahbclemolcmkeanoagc	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ocmfilhakdbncmojmlbagpkjfbmeinbd	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ojggmchlghnjlapmfbnjholfjkiidbch	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		onhogfjeacnfoofkfgppdlbmlmnplgbn	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ookjlbkiijinhpmnjffcofjonbfbgaoc	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		opfgelmcmbiajamepnmloijbpoleiama	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pdadjkfkgcafgbceimcpbkalnfnepbnk	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		penjlddjkjgpnkllboccdgccekpkcbin	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pfkcfdjnlfjcmkjnhcbfhfkkoflnhjln	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pfknkoocfefiocadajpngdknmkjgakdg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		phkbamefinggmakgklpkljjmgibohnba	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pidhddgciaponoajdngciiemcflpnnbg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pknlccmneadmjbkollckpblgaaabameg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		pnccjgokhbnggghddhahcnaopgeipafg	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet_or_2fa		ppdjlkfkedmidmclhakfncpfdmdgmjpm	server config (observed only at runtime, procmon)	server 'extensions' list (name not in binary)
+ext_wallet	output layout	Wallets\ and Authenticators\ folders	hardcoded (observed in code)	fn 0x1a2a0, 0x1a4b0 (Local Extension Settings)
+desktop_wallet	Bitcoin Core	%LOCALAPPDATA%\Bitcoin\wallets; %APPDATA%\Bitcoin\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Coinomi	%LOCALAPPDATA%\Coinomi\Coinomi\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Tari Universe	%LOCALAPPDATA%\com.tari.universe; %APPDATA%\com.tari.universe	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Atomic	%APPDATA%\Atomic\Local Storage\leveldb	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Coin98	%APPDATA%\Coin98	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Daedalus	%APPDATA%\Daedalus\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Dash Core	%APPDATA%\DashCore\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Dogecoin	%APPDATA%\Dogecoin\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Electrum	%APPDATA%\Electrum\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Electrum-LTC	%APPDATA%\Electrum-LTC	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Ethereum keystore	%APPDATA%\Ethereum\keystore	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Exodus	%APPDATA%\Exodus\exodus.wallet	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Guarda	%APPDATA%\Guarda\Local Storage\leveldb	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Litecoin	%APPDATA%\Litecoin\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	MathWallet	%APPDATA%\MathWallet	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	MetaMask desktop	%APPDATA%\MetaMask	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Phantom desktop	%APPDATA%\Phantom	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Raven	%APPDATA%\Raven\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Sparrow	%APPDATA%\Sparrow\wallets	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Trust Wallet	%APPDATA%\TrustWallet	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Wasabi	%APPDATA%\WalletWasabi\Client	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Jaxx Liberty	%APPDATA%\com.liberty.jaxx	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Armory	%APPDATA%\Armory	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Binance	%APPDATA%\Binance	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	BitcoinGold	%APPDATA%\BitcoinGold	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	BlueWallet	%APPDATA%\BlueWallet	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Groestlcoin	%APPDATA%\Groestlcoin	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Komodo	%APPDATA%\Komodo	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Ledger Live	%APPDATA%\Ledger Live	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Monero	%APPDATA%\Monero	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	MyCrypto	%APPDATA%\MyCrypto	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	MyEtherWallet	%APPDATA%\MyEtherWallet	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	MyMonero	%APPDATA%\MyMonero	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	PIVX	%APPDATA%\PIVX	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	TrezorSuite	%APPDATA%\TrezorSuite	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Vertcoin	%APPDATA%\Vertcoin	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	Zcash	%APPDATA%\Zcash	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+desktop_wallet	bytecoin	%APPDATA%\bytecoin	server config (observed only at runtime, procmon)	server 'desktop' list; copied to Wallets\Desktop\ (fn 0x7f710)
+app	Telegram Desktop	tdata -> Messengers/<name>/tdata/	hardcoded (observed in code)	stack strings 0x379f1, 0x38211; tdata probed in every AppData dir
+app	Discord	%APPDATA%\discord\Local Storage\leveldb + Local State	hardcoded (observed in code)	fn 0x388a0, 0x39110
+app	DiscordCanary	%APPDATA%\discordcanary	hardcoded (observed in code)	fn 0x388a0
+app	DiscordPTB	%APPDATA%\discordptb	hardcoded (observed in code)	fn 0x388a0
+app	Lightcord	%APPDATA%\Lightcord	hardcoded (observed in code)	fn 0x388a0
+app	FileZilla	%APPDATA%\FileZilla recentservers.xml, sitemanager.xml	hardcoded (observed in code)	fn 0x1dbb0
+app	PuTTY	HKCU\Software\SimonTatham\PuTTY\Sessions	hardcoded (observed in code)	fn 0x1dfb0
+app	RDP	CredEnumerateW TERMSRV/*; HKCU\Software\Microsoft\Terminal Server Client\Servers	hardcoded (observed in code)	fn 0x1e5d0
+app	Steam	loginusers.vdf, local.vdf -> Games/Steam/SteamTokens.txt	hardcoded (observed in code)	fn 0x41990
+app	Screenshot	GDI+ JPEG, gated by flag 0x90324	hardcoded (observed in code)	fn 0x40e90
+app	System info	host, process, software, browser listings; 25-name AV table	hardcoded (observed in code)	fn 0x77e70, 0x7bdf0, 0x7cc90, 0x7d620, 0x7e220; AV table 0x7ae6e-0x7b506
+app	Geo-IP	ipapi.co/json/, ipinfo.io/json, ip-api.com/json	hardcoded (observed in code)	fn 0x1f330
+app	Locked-file copy	VSS shadow copy (CreateVssBackupComponentsInternal) and handle-path copy	hardcoded (observed in code)	fn 0x2b820, 0x2c060
+filegrabber_pattern	*seed*	*seed*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*wallet*	*wallet*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*backup*	*backup*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*mnemonic*	*mnemonic*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*private*	*private*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*recovery*	*recovery*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*password*	*password*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_pattern	*secret*	*secret*	hardcoded (observed in code), built-in default	fn 0x33ff0 / 0x1b690
+filegrabber_skip_dir	node_modules	node_modules	hardcoded (observed in code)	fn 0x1c270
+filegrabber_skip_dir	.git	.git	hardcoded (observed in code)	fn 0x1c270
+filegrabber_skip_dir	__pycache__	__pycache__	hardcoded (observed in code)	fn 0x1c270
+filegrabber_skip_dir	.cache	.cache	hardcoded (observed in code)	fn 0x1c270
+filegrabber_skip_dir	.npm	.npm	hardcoded (observed in code)	fn 0x1c270
+filegrabber_skip_dir	.nuget	.nuget	hardcoded (observed in code)	fn 0x1c270
+filegrabber_ext	priority extensions	see fn 0x33ff0 (defaults) and 0x10b50 (scoring)	hardcoded (observed in code)	fn 0x33ff0, 0x10b50
+filegrabber_ext	skip extensions	see fn 0xf720, 0x1aa50, 0x7fba0	hardcoded (observed in code)	fn 0xf720, 0x1aa50, 0x7fba0
+filegrabber_root	Desktop/Documents/Downloads	%USERPROFILE%\Desktop, Documents, Downloads (+ C:\TestGrabber dev path); server 'paths' override	hardcoded (observed in code)	fn 0x1b690
+filegrabber_output	Files/ and Mnemonics.txt	Files/<path>; Mnemonics.txt	hardcoded (observed in code)	stack string 0x1bfef
+dead_string	--headless=new	--headless=new	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	--window-position	--window-position	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	--window-size	--window-size	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	--start-minimized	--start-minimized	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	--disable-software-rasterizer	--disable-software-rasterizer	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	ChromeHelperSync	ChromeHelperSync	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	v20_stealth_	v20_stealth_	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	aster_app_bound_encrypted_key	aster_app_bound_encrypted_key	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	CLSID {708860E0...}	CLSID {708860E0...}	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	CLSID {1F87BFC3...}	CLSID {1F87BFC3...}	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	CLSID {6B4F4E26...}	CLSID {6B4F4E26...}	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	Telegram Desktop\tdata	Telegram Desktop\tdata	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	Exodus	Exodus	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	atomic	atomic	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	bitcoin	bitcoin	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	ethereum	ethereum	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan
+dead_string	ledger	ledger	decrypted by 0x44300, wiped by 0x72fe0, no code xref	strings_full scan

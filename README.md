@@ -11,6 +11,9 @@ Detection content for MIOU, a malware operation that ships trojanized Python MCP
 | `sigma/` | 6 Sigma rules: hidden Python child fed over stdin, rundll32 ordinal #3 from AppData, clipper file drop, COM hijack registry write, browser started with a `%TEMP%\v20_*` profile, `CrHlp_*` named pipe (app-bound encryption bypass) |
 | `semgrep/mcp_hidden_loader.semgrep.yml` | 4 Semgrep rules for Python MCP server repos, aimed at the technique (decorator-started background job, hidden interpreter fed over stdin, ctypes PE mapper, pinned IP with TLS verification off) rather than this kit's literals |
 | `kql/miou_mde.kql` | Microsoft Defender for Endpoint hunting queries |
+| `TECHNICAL.md` | Technical notes: key derived from anti-debug checks, build key leaking through the API hash, MIOU container format, Beretta config, C2 protocol, Chrome app-bound key theft, targets |
+| `scripts/` | `extract_k.py` (derive the build key from a stage 4), `stage4_api_hash.py`, `brt_config_unpack.py`, `fnv_api_scan.py` |
+| `targets.tsv` | Beretta's target list |
 | `tests/` | Test results: recall on known family samples and false positives on benign corpora |
 
 ## Test results
