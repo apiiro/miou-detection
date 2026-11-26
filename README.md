@@ -13,6 +13,7 @@ Detection content for MIOU, a malware operation that ships trojanized Python MCP
 | `kql/miou_mde.kql` | Microsoft Defender for Endpoint hunting queries |
 | `TECHNICAL.md` | Technical notes: key derived from anti-debug checks, build key leaking through the API hash, MIOU container format, Beretta config, C2 protocol, Chrome app-bound key theft, targets |
 | `scripts/` | `extract_k.py` (derive the build key from a stage 4), `stage4_api_hash.py`, `brt_config_unpack.py`, `fnv_api_scan.py` |
+| `IOCS.md`, `iocs.csv` | Indicators: domains, exfil server, hashes, file paths, registry, clipper wallets, and the 36 reported repos with their status |
 | `targets.tsv` | Beretta's target list |
 | `tests/` | Test results: recall on known family samples and false positives on benign corpora |
 

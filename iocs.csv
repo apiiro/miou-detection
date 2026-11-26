@@ -1,0 +1,57 @@
+type,value,context
+domain,api.failproxy.space,delivery C2
+domain,api.nailproxy.space,delivery C2
+url_path,/api/v1/auth/session,delivery handshake
+url_path,/api/v1/data/sync,delivery payload
+ip:port,62.60.226.113:6673,"exfil, AS214351, TLS without SNI"
+domain,spellmarketplace.club,exfil fallback :443
+sha256,707e89148589beeb0d1602cc080ae609bc4203b0fd074e80bf8f23159588c0ee,stage 3 crypter (fake taskhostw)
+sha256,5ce53eeac3aedcfaf5b593b53a53f59217f880331413f3da30b6966b25f1e4df,stage 4 loader (memory only)
+sha256,1efc29cbd68b9cceb158dbd1632f682766a706f40d47464afec395c9dad4eb35,Beretta image (memory only)
+sha256,eeff7b96019a65fa4518da67a4bc39e496d3c6f7a327081775140ac8a1ca5b97,Beretta Chrome helper DLL
+sha256,b6abbfece488080e23f5498ecf006ec02de9fa98b74ce3c385c53a0696ec0e0c,clipper msedgeview.dll
+file_path,%LOCALAPPDATA%\Microsoft\EdgeWebView\msedgeview.dll,clipper drop
+registry,HKCU\Software\Classes\CLSID\{AAA288BA-9A4C-45B0-95D7-94D524869DB5}\InprocServer32,clipper COM hijack (per build)
+mutex,Local\{8F6E2A14-C9D1-4bdd-B8CF-92F04E6B3E9F},clipper
+btc,bc1q00h2kl4uvwcvzp7zdl80yx97f0p8jv450qdzwc,clipper wallet
+eth,0xcEBDCBA0a42B2dE9Be38c48d648471C672C007C1,clipper wallet (ETH/BNB)
+tron,TL1417xeaNrvU6La3N5Vgpye1e47i4zHUv,clipper wallet
+sol,2UoxbkKwhZSvEtTUzWf9aghXi1LJgsgpGApxvFpSdvf3,clipper wallet
+ltc,ltc1q36llsr6s3n4c8ur6g0prf8c9l0gs7ufwdakmng,clipper wallet
+github_repo,Adampcber1234/Seed-Generator,"MIOU repo, reported 2026-11-18"
+github_repo,ashleydarosa/CC-Checker-Validator-Generator,"MIOU repo, reported 2026-11-18"
+github_repo,aylla18/Polymarket-Market-Agent,"MIOU repo, reported 2026-11-18"
+github_repo,Calebe95/Trade-Bot-Hyperliquid,"MIOU repo, reported 2026-11-18"
+github_repo,chord1990/Lighter-Airdrop-Tracker,"MIOU repo, reported 2026-11-18"
+github_repo,Danuse84/Exodus-Fake-Balance,"MIOU repo, reported 2026-11-18"
+github_repo,dugffoanh1992/Keylogger-Crypto-Clipper,"MIOU repo, reported 2026-11-18"
+github_repo,else24/kalshi-market-bot,"MIOU repo, reported 2026-11-18"
+github_repo,frantiska21/Trade-Bot-Hyperliquid,"MIOU repo, reported 2026-11-18"
+github_repo,Gemma41/Onchain-Accounting,"MIOU repo, reported 2026-11-18"
+github_repo,goulash23/Stablecoin-Payment-Gateway,"MIOU repo, reported 2026-11-18"
+github_repo,hurside69/Polymarket-Perpetual-Bot,"MIOU repo, reported 2026-11-18"
+github_repo,isabelpapaya/MCP-Server-Lighter,"MIOU repo, reported 2026-11-18"
+github_repo,jeffreyquinn95/Hyperliquid-Leaderboard-Analytics,"MIOU repo, reported 2026-11-18"
+github_repo,joannarogers2005/Stablecoin-Payment-Gateway,"MIOU repo, reported 2026-11-18"
+github_repo,Kimberlyfriis/TRX-Drainer-Tool,"MIOU repo, reported 2026-11-18"
+github_repo,lalouannabel0072/kalshi-trading-bot,"MIOU repo, reported 2026-11-18"
+github_repo,lyp2431-stack/Srxs,"MIOU repo, reported 2026-11-18"
+github_repo,marisanilsson33/Solana-Drainer-Tool,"MIOU repo, reported 2026-11-18"
+github_repo,mav187/m,"MIOU repo, reported 2026-11-18"
+github_repo,mdasneves2006/Stablecoin-Payment-Gateway,"MIOU repo, reported 2026-11-18"
+github_repo,MelisaPeteRs2006/Silent-Crypto-Miner,"MIOU repo, reported 2026-11-18"
+github_repo,miloslavatangen/Checker-Mnemonic,"MIOU repo, reported 2026-11-18"
+github_repo,MyZahradamiyas1816/Seed-Generator,"MIOU repo, reported 2026-11-18"
+github_repo,ninamorozov1982/Aster-Dex-Airdrop-Tracker,"MIOU repo, reported 2026-11-18"
+github_repo,noloyswy1993/Tonkeeper-Fake-Balance,"MIOU repo, reported 2026-11-18"
+github_repo,pverhoeven74/Crypto-Clipper,"MIOU repo, reported 2026-11-18"
+github_repo,sabinastone7/Polymarket-Trading-Bot,"MIOU repo, reported 2026-11-18"
+github_repo,sandskatherinenymph/Electrum-Fake-Balance,"MIOU repo, reported 2026-11-18"
+github_repo,Soniavasseur/Wallet-Risk-Scanner,"MIOU repo, reported 2026-11-18"
+github_repo,tigerogijzooav/Hyperliquid-Trade-Bot,"MIOU repo, reported 2026-11-18"
+github_repo,trinity1994/MCP-Server-Aster-DEX,"MIOU repo, reported 2026-11-18"
+github_repo,warmknight30/Silent-Crypto-Miner,"MIOU repo, reported 2026-11-18"
+github_repo,zacharias80/Polymarket-Prediction-Bot,"MIOU repo, reported 2026-11-18"
+github_repo,zacharyrogue/Crypto-Whale-Tracker,"MIOU repo, reported 2026-11-18"
+github_repo,zgraham1981/Stablecoin-Payment-Gateway,"MIOU repo, reported 2026-11-18"
+github_repo,blessedberserker/MCP-Server-Aster-DEX,MIOU MCP server
