@@ -1,6 +1,6 @@
 # MIOU and Beretta: technical notes
 
-Beretta is a C++ infostealer that labels itself `// Beretta Private build 2.1`. It has no public record. It reaches victims through MIOU, an operation of 34 GitHub repos that includes two MCP servers an AI client starts for you; the delivery story and the money are in the Apiiro write-up. These notes are for people who have to take the sample apart.
+Beretta is a C++ infostealer that labels itself `// Beretta Private build 2.1`. We found no public report of it before ours. It reaches victims through MIOU, an operation of 36 live GitHub repos (November 18, 2026) that includes two MCP servers an AI agent starts for you; the delivery story and the money are in the Apiiro write-up. These notes are for people who have to take the sample apart.
 
 Two findings matter most. The loader turns its anti-debugging checks into the decryption key, so a debugger, an emulator or an instrumentation tool gets a clean exit and no stealer instead of an alert. And the same build key leaks through the loader's API-hash routine, so one function gives an analyst everything needed to unpack the payload statically. Beretta is also private, misattributed to StealC, and missed by every community YARA rule we tried.
 
@@ -15,7 +15,7 @@ Addresses are RVAs in the stage-4 loader, except in the "Beretta itself" section
 
 ## The key that decrypts garbage when watched
 
-The stage-4 loader does not refuse to run under a debugger. It runs, derives a wrong key, decrypts noise and exits cleanly. Beretta, once it does run, has a second gate: the usual PEB and debug-port checks end in `ExitProcess(0)`, and a human check wants at least five cursor moves within about 45 seconds. A sandbox with a still cursor sees the process end before it touches a file. There are no VM strings, no locale kill switch and no self-deletion.
+The stage-4 loader does not refuse to run under a debugger. It runs, derives a wrong key, decrypts noise and exits cleanly. Beretta, once it does run, has a second gate: the usual PEB and debug-port checks end in `ExitProcess(0)`, and the code has a human check that wants at least five cursor moves within about 45 seconds. In our VM runs that check did not stop it: nothing moved the mouse and it still uploaded our canary files. There are no VM strings, no locale kill switch and no self-deletion.
 
 A 14-step handler pipeline over a 0x370-byte context runs nine key handlers. Each adds `CONST ^ penalty` to a 64-bit accumulator at `ctx+0x220`. On a clean machine every penalty is 0.
 
