@@ -1,5 +1,7 @@
 # MIOU / Beretta detection rules
 
+![Your AI coding agent started the MCP server. The server started a stealer.](docs/cover.gif)
+
 Detection content for MIOU, a malware operation that ships trojanized Python MCP servers and crypto tools on GitHub. Starting the server (for example from an MCP client such as Claude Desktop, Cursor or Cline) fetches an encrypted payload that maps the private "Beretta" stealer in memory and installs a persistent clipboard clipper (`msedgeview.dll`, per-user COM hijack, `rundll32 …,#3`).
 
 ## Contents
